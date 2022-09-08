@@ -6,25 +6,14 @@ public class first_unique_character
         System.out.println(str.charAt(firstIndex));
     }
 
-    static int firstnonrepeating(String str){
-        int[] fi = new int[256];
 
-        for(int i = 0; i < 256; i++)
-            fi[i] = -1;
-
-        for(int i = 0; i < str.length(); i++){
-            if(fi[str.charAt(i)] == -1)
-                fi[str.charAt(i)] = i;
-            else
-                fi[str.charAt(i)] = -2;
-        }
-        int res = Integer.MAX_VALUE;
-
-        for(int i = 0; i<256; i++){
-            if(fi[i] >= 0)
-                res = Math.min(res,fi[i]);
-        }
-        if (res == Integer.MAX_VALUE) return -1;
-        else return res;
+    public static int firstnonrepeating(String s) {
+        int freq [] = new int[26];
+        for(int i = 0; i < s.length(); i ++)
+            freq [s.charAt(i) - 'a'] ++;
+        for(int i = 0; i < s.length(); i ++)
+            if(freq [s.charAt(i) - 'a'] == 1)
+                return i;
+        return -1;
     }
 }
