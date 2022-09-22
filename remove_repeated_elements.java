@@ -6,6 +6,7 @@ public class remove_repeated_elements {
         int[] arr = {1,1,2,2,3,3};
         int n = arr.length;
         removeDuplicates(arr,n);
+        System.out.println("Hello");
     }
 
     private static void removeDuplicates(int[] arr, int n) {
